@@ -15,7 +15,13 @@ class DebtsHomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    /**
+     * This Function Is To Change Notification Bar On Device
+     */
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     /*
     // MARK: - Navigation
 
