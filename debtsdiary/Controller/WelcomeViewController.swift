@@ -13,6 +13,10 @@ class WelcomeViewController: UIViewController {
     @IBOutlet var getStartedButton: UIButton!
     @IBOutlet var welcomeTitle: UILabel!
     
+    private let userDefaults = UserDefaults.standard
+    private var name: String? = ""
+    private var currency: String? = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getStartedButton.setRounded()
@@ -22,6 +26,21 @@ class WelcomeViewController: UIViewController {
         text.append(NSAttributedString(string: "Debts ", attributes: [NSAttributedString.Key.foregroundColor: UIColor(hexString: "#8DEAA2")]))
         text.append(NSAttributedString(string: "Diary!", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]));
         welcomeTitle.attributedText = text
+    }
+    
+    override func viewWillLayoutSubviews() {
+        name = userDefaults.string(forKey: "name")
+        currency = userDefaults.string(forKey: "currency")
+        if name != nil && currency != nil {
+            segueToMain()
+        }
+    }
+    
+    private func segueToMain() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController =  storyboard.instantiateViewController(withIdentifier: "main")
+        viewController.modalPresentationStyle = .fullScreen
+        self.present(viewController, animated: true, completion: nil)
     }
     
     /**

@@ -13,10 +13,22 @@ class FirstSetupViewController: UIViewController {
     @IBOutlet var currencyTextField: UITextField!
     @IBOutlet var submitButton: UIButton!
     
+    private let userDefaults = UserDefaults.standard
+    private var name: String? = ""
+    private var currency: String? = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         submitButton.setRounded()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        name = userDefaults.string(forKey: "name")
+        currency = userDefaults.string(forKey: "currency")
+        if name != nil && currency != nil {
+            segueToMain()
+        }
     }
     
     private func segueToMain() {
@@ -26,8 +38,36 @@ class FirstSetupViewController: UIViewController {
         self.present(viewController, animated: true, completion: nil)
     }
     
+    private func setAlert(textField: UITextField, title: String, message: String)
+    {
+        textField.layer.cornerRadius = 8
+        textField.layer.borderWidth = 1.0
+        textField.layer.borderColor = UIColor.red.cgColor
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okayButton = UIAlertAction(title: "Okay", style: .default, handler: nil)
+        alert.addAction(okayButton)
+        self.present(alert, animated: true, completion: nil)
+    }
 
     @IBAction func submitButtonPressed(_ sender: Any) {
-        segueToMain()
+        if nameTextField.hasText && currencyTextField.hasText
+        {
+            name = nameTextField.text
+            currency = currencyTextField.text
+            userDefaults.set(nameTextField.text, forKey: "name")
+            userDefaults.set(currencyTextField.text, forKey: "currency")
+            segueToMain()
+        }
+        else
+        {
+            if nameTextField.text == ""
+            {
+                setAlert(textField: nameTextField, title: "Name Empty", message: "Please Add Your Name")
+            }
+            else if currencyTextField.text == ""
+            {
+                setAlert(textField: currencyTextField, title: "Currency Empty", message: "Please Add Your Currency")
+            }
+        }
     }
 }

@@ -17,12 +17,28 @@ class HomeViewController: UIViewController {
     @IBOutlet var unpaidDebtsLabel: UILabel!
     @IBOutlet var settingButton: UIButton!
     
+    private let userDefaults = UserDefaults.standard
+    private let date = Date()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         settingButton.setRounded()
         totalDebtsView.setRounded()
         unpaidDebtsView.setRounded()
+        
+        let name = userDefaults.string(forKey: "name")
+        helloNameLabel.text = "Hello, \(name!)!"
+        
+        let todayDate = getTodayDate()
+        dateLabel.text = todayDate
+    }
+    
+    private func getTodayDate() -> String {
+        let dateF = DateFormatter()
+        dateF.dateFormat = "EEEE, MMM d yyyy"
+        let todayDate = dateF.string(from: date)
+        return todayDate
     }
     
 
@@ -36,14 +52,4 @@ class HomeViewController: UIViewController {
         return .lightContent
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
