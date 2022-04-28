@@ -15,6 +15,13 @@ extension UIButton {
     }
 }
 
+extension UIView {
+    func setRounded() {
+        self.layer.cornerRadius = 13
+        self.layer.cornerCurve = .continuous // make corner more smooth
+    }
+}
+
 extension UIColor {
     convenience init(hexString: String) {
         let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)

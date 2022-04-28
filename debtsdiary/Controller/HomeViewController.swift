@@ -9,12 +9,20 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var helloNameLabel: UILabel!
+    @IBOutlet var totalDebtsView: UIView!
+    @IBOutlet var totalDebtsLabel: UILabel!
+    @IBOutlet var unpaidDebtsView: UIView!
+    @IBOutlet var unpaidDebtsLabel: UILabel!
     @IBOutlet var settingButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        settingButton.setRounded()
+        totalDebtsView.setRounded()
+        unpaidDebtsView.setRounded()
     }
     
 

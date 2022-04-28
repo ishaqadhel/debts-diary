@@ -20,7 +20,14 @@ class DebtDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        submitButton.setRounded()
+    }
+    
+    /**
+     * This Function Is To Change Notification Bar On Device
+     */
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {

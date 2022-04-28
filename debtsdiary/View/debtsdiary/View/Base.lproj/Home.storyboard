@@ -154,7 +154,13 @@ Nam Do Saq!</string>
                     </view>
                     <navigationItem key="navigationItem" id="IRg-sk-zHa"/>
                     <connections>
+                        <outlet property="dateLabel" destination="Btv-Oj-zxi" id="axc-wk-G7Z"/>
+                        <outlet property="helloNameLabel" destination="ikh-we-pZ3" id="GCR-fz-qBj"/>
                         <outlet property="settingButton" destination="iDf-MP-O5F" id="PsU-Hb-xtu"/>
+                        <outlet property="totalDebtsLabel" destination="8XD-W9-C8f" id="Gns-hr-1fU"/>
+                        <outlet property="totalDebtsView" destination="TGh-lC-K8v" id="j86-za-NUa"/>
+                        <outlet property="unpaidDebtsLabel" destination="fea-H2-akU" id="qDe-pA-f13"/>
+                        <outlet property="unpaidDebtsView" destination="d0R-5C-74D" id="VFR-l3-um0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NK7-AD-3Ud" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -164,7 +170,7 @@ Nam Do Saq!</string>
         <!--Setting View Controller-->
         <scene sceneID="GWy-yF-how">
             <objects>
-                <viewController id="ScS-FE-Wfh" customClass="SettingViewController" customModule="debtsdiary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="ScS-FE-Wfh" customClass="SettingViewController" customModule="debtsdiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lr5-JI-6nG">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -217,7 +223,7 @@ Nam Do Saq!</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPd-w4-GLR">
-                                <rect key="frame" x="14" y="523" width="356" height="50"/>
+                                <rect key="frame" x="14" y="710" width="356" height="50"/>
                                 <color key="backgroundColor" red="0.55294117649999996" green="0.91764705879999997" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="eL2-J1-KzY"/>
@@ -240,12 +246,12 @@ Nam Do Saq!</string>
                             <constraint firstItem="1jp-Ob-SNa" firstAttribute="trailing" secondItem="VxL-ta-jaL" secondAttribute="trailing" constant="16" id="D90-ft-gIW"/>
                             <constraint firstItem="LPd-w4-GLR" firstAttribute="leading" secondItem="1jp-Ob-SNa" secondAttribute="leading" constant="14" id="E1T-Nd-xF5"/>
                             <constraint firstItem="ZwN-I4-MvB" firstAttribute="centerX" secondItem="1jp-Ob-SNa" secondAttribute="centerX" id="E5w-AE-cHo"/>
+                            <constraint firstItem="1jp-Ob-SNa" firstAttribute="bottom" secondItem="LPd-w4-GLR" secondAttribute="bottom" constant="50" id="ENJ-H7-cSh"/>
                             <constraint firstItem="S9d-fm-Wjy" firstAttribute="top" secondItem="ZwN-I4-MvB" secondAttribute="bottom" constant="70" id="EWV-rh-Ipd"/>
                             <constraint firstItem="TwM-M0-01U" firstAttribute="top" secondItem="1jp-Ob-SNa" secondAttribute="top" constant="13" id="GIe-dZ-JEp"/>
                             <constraint firstItem="TwM-M0-01U" firstAttribute="leading" secondItem="1jp-Ob-SNa" secondAttribute="leading" constant="20" id="JCo-jk-dbI"/>
                             <constraint firstItem="uoo-B0-Rdo" firstAttribute="leading" secondItem="1jp-Ob-SNa" secondAttribute="leading" constant="18" id="K5B-Tj-6lH"/>
                             <constraint firstItem="1jp-Ob-SNa" firstAttribute="trailing" secondItem="uoo-B0-Rdo" secondAttribute="trailing" constant="18" id="P32-nM-7XJ"/>
-                            <constraint firstItem="LPd-w4-GLR" firstAttribute="top" secondItem="Grd-Kg-kmq" secondAttribute="bottom" constant="48" id="Q1N-Vo-4HQ"/>
                             <constraint firstItem="Grd-Kg-kmq" firstAttribute="leading" secondItem="1jp-Ob-SNa" secondAttribute="leading" constant="16" id="Zgf-R6-twp"/>
                             <constraint firstItem="Grd-Kg-kmq" firstAttribute="top" secondItem="qNz-hy-XjZ" secondAttribute="bottom" constant="8" symbolic="YES" id="awh-nb-cI8"/>
                             <constraint firstItem="1jp-Ob-SNa" firstAttribute="trailing" secondItem="S9d-fm-Wjy" secondAttribute="trailing" constant="20" id="gtB-CE-xS9"/>
@@ -260,6 +266,8 @@ Nam Do Saq!</string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zrJ-VT-7Rq"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="backButton" destination="TwM-M0-01U" id="lD9-TL-hx5"/>
                         <outlet property="currencyTextField" destination="Grd-Kg-kmq" id="kFA-wV-dlA"/>
