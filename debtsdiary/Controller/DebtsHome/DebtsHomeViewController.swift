@@ -9,6 +9,8 @@ import UIKit
 
 class DebtsHomeViewController: UIViewController {
 
+    @IBOutlet var plusButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
