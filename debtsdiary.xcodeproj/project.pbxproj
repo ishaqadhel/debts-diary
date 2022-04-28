@@ -10,6 +10,10 @@
 		6A77666E281A8486008BC1FA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A77666D281A8486008BC1FA /* WelcomeViewController.swift */; };
 		6A776671281A8789008BC1FA /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A776670281A8789008BC1FA /* Extension.swift */; };
 		6ACD8A96281AA6CA00679B7D /* FirstSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACD8A95281AA6CA00679B7D /* FirstSetupViewController.swift */; };
+		6ACD8A99281AC64200679B7D /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ACD8A97281AC64200679B7D /* Home.storyboard */; };
+		6ACD8A9C281AC68A00679B7D /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ACD8A9A281AC68A00679B7D /* List.storyboard */; };
+		6ACD8A9E281AC83300679B7D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACD8A9D281AC83300679B7D /* HomeViewController.swift */; };
+		6ACD8AA0281AC92F00679B7D /* DebtsHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACD8A9F281AC92F00679B7D /* DebtsHomeViewController.swift */; };
 		6AE72C2A281A70BB008D1BCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE72C29281A70BB008D1BCE /* AppDelegate.swift */; };
 		6AE72C2C281A70BB008D1BCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE72C2B281A70BB008D1BCE /* SceneDelegate.swift */; };
 		6AE72C2E281A70BB008D1BCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE72C2D281A70BB008D1BCE /* ViewController.swift */; };
@@ -23,6 +27,10 @@
 		6A77666D281A8486008BC1FA /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		6A776670281A8789008BC1FA /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		6ACD8A95281AA6CA00679B7D /* FirstSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSetupViewController.swift; sourceTree = "<group>"; };
+		6ACD8A98281AC64200679B7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = debtsdiary/View/Base.lproj/Home.storyboard; sourceTree = "<group>"; };
+		6ACD8A9B281AC68A00679B7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = debtsdiary/View/debtsdiary/View/Base.lproj/List.storyboard; sourceTree = "<group>"; };
+		6ACD8A9D281AC83300679B7D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		6ACD8A9F281AC92F00679B7D /* DebtsHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtsHomeViewController.swift; sourceTree = "<group>"; };
 		6AE72C26281A70BB008D1BCE /* debtsdiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = debtsdiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AE72C29281A70BB008D1BCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AE72C2B281A70BB008D1BCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +56,8 @@
 		6A776667281A73FD008BC1FA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6ACD8A9A281AC68A00679B7D /* List.storyboard */,
+				6ACD8A97281AC64200679B7D /* Home.storyboard */,
 				6AE72C2F281A70BB008D1BCE /* Main.storyboard */,
 			);
 			path = View;
@@ -59,6 +69,8 @@
 				6AE72C2D281A70BB008D1BCE /* ViewController.swift */,
 				6A77666D281A8486008BC1FA /* WelcomeViewController.swift */,
 				6ACD8A95281AA6CA00679B7D /* FirstSetupViewController.swift */,
+				6ACD8A9D281AC83300679B7D /* HomeViewController.swift */,
+				6ACD8A9F281AC92F00679B7D /* DebtsHomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -163,7 +175,9 @@
 			files = (
 				6AE72C39281A70BE008D1BCE /* LaunchScreen.storyboard in Resources */,
 				6AE72C36281A70BE008D1BCE /* Assets.xcassets in Resources */,
+				6ACD8A9C281AC68A00679B7D /* List.storyboard in Resources */,
 				6AE72C31281A70BB008D1BCE /* Main.storyboard in Resources */,
+				6ACD8A99281AC64200679B7D /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,7 +191,9 @@
 				6AE72C2E281A70BB008D1BCE /* ViewController.swift in Sources */,
 				6A77666E281A8486008BC1FA /* WelcomeViewController.swift in Sources */,
 				6AE72C2A281A70BB008D1BCE /* AppDelegate.swift in Sources */,
+				6ACD8A9E281AC83300679B7D /* HomeViewController.swift in Sources */,
 				6A776671281A8789008BC1FA /* Extension.swift in Sources */,
+				6ACD8AA0281AC92F00679B7D /* DebtsHomeViewController.swift in Sources */,
 				6ACD8A96281AA6CA00679B7D /* FirstSetupViewController.swift in Sources */,
 				6AE72C34281A70BB008D1BCE /* debtsdiary.xcdatamodeld in Sources */,
 				6AE72C2C281A70BB008D1BCE /* SceneDelegate.swift in Sources */,
@@ -187,6 +203,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		6ACD8A97281AC64200679B7D /* Home.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6ACD8A98281AC64200679B7D /* Base */,
+			);
+			name = Home.storyboard;
+			sourceTree = "<group>";
+		};
+		6ACD8A9A281AC68A00679B7D /* List.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6ACD8A9B281AC68A00679B7D /* Base */,
+			);
+			name = List.storyboard;
+			sourceTree = "<group>";
+		};
 		6AE72C2F281A70BB008D1BCE /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
