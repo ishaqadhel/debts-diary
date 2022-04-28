@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  SettingViewController.swift
 //  debtsdiary
 //
 //  Created by Ishaq Adheltyo on 28/04/22.
@@ -7,9 +7,12 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class SettingViewController: UIViewController {
 
-    @IBOutlet var settingButton: UIButton!
+    @IBOutlet var backButton: UIButton!
+    @IBOutlet var nameTextField: UITextField!
+    @IBOutlet var currencyTextField: UITextField!
+    @IBOutlet var submitButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +21,11 @@ class HomeViewController: UIViewController {
     }
     
 
-    @IBAction func settingButtonPressed(_ sender: Any) {
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func submitButtonPressed(_ sender: Any) {
     }
     
     /**
