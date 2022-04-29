@@ -17,6 +17,7 @@
 		6ACD8AA2281ADDBB00679B7D /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACD8AA1281ADDBB00679B7D /* SettingViewController.swift */; };
 		6ACD8AA7281AF86A00679B7D /* DebtTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACD8AA6281AF86A00679B7D /* DebtTableViewCell.swift */; };
 		6ACD8AA9281B0BAF00679B7D /* DebtDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACD8AA8281B0BAF00679B7D /* DebtDetailViewController.swift */; };
+		6ACD8AB2281B9CF900679B7D /* Debts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACD8AB1281B9CF900679B7D /* Debts.swift */; };
 		6AE72C2A281A70BB008D1BCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE72C29281A70BB008D1BCE /* AppDelegate.swift */; };
 		6AE72C2C281A70BB008D1BCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE72C2B281A70BB008D1BCE /* SceneDelegate.swift */; };
 		6AE72C2E281A70BB008D1BCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE72C2D281A70BB008D1BCE /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 		6ACD8AA1281ADDBB00679B7D /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		6ACD8AA6281AF86A00679B7D /* DebtTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtTableViewCell.swift; sourceTree = "<group>"; };
 		6ACD8AA8281B0BAF00679B7D /* DebtDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtDetailViewController.swift; sourceTree = "<group>"; };
+		6ACD8AB1281B9CF900679B7D /* Debts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debts.swift; sourceTree = "<group>"; };
 		6AE72C26281A70BB008D1BCE /* debtsdiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = debtsdiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AE72C29281A70BB008D1BCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AE72C2B281A70BB008D1BCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +102,14 @@
 			path = DebtsHome;
 			sourceTree = "<group>";
 		};
+		6ACD8AB0281B9C9700679B7D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6ACD8AB1281B9CF900679B7D /* Debts.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		6AE72C1D281A70BB008D1BCE = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +129,7 @@
 		6AE72C28281A70BB008D1BCE /* debtsdiary */ = {
 			isa = PBXGroup;
 			children = (
+				6ACD8AB0281B9C9700679B7D /* Model */,
 				6A77666F281A8739008BC1FA /* Extension */,
 				6A776668281A7419008BC1FA /* Controller */,
 				6A776667281A73FD008BC1FA /* View */,
@@ -207,6 +218,7 @@
 			files = (
 				6AE72C2E281A70BB008D1BCE /* ViewController.swift in Sources */,
 				6A77666E281A8486008BC1FA /* WelcomeViewController.swift in Sources */,
+				6ACD8AB2281B9CF900679B7D /* Debts.swift in Sources */,
 				6AE72C2A281A70BB008D1BCE /* AppDelegate.swift in Sources */,
 				6ACD8A9E281AC83300679B7D /* HomeViewController.swift in Sources */,
 				6ACD8AA7281AF86A00679B7D /* DebtTableViewCell.swift in Sources */,
