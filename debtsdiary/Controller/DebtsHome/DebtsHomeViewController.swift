@@ -77,6 +77,15 @@ extension DebtsHomeViewController: UITableViewDataSource, UITableViewDelegate {
             
             cell.dateLabel.text = debtDate
             
+            if debt.paid == false
+            {
+                cell.logoButton.setImage(UIImage(systemName: "creditcard.trianglebadge.exclamationmark"), for: .normal)
+            }
+            else
+            {
+                cell.logoButton.setImage(UIImage(systemName: "checkmark"), for: .normal)
+            }
+            
             return cell
         } else {
             return UITableViewCell()

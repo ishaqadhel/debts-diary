@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class HomeViewController: UIViewController {
 
@@ -19,6 +20,13 @@ class HomeViewController: UIViewController {
     
     private let userDefaults = UserDefaults.standard
     private let date = Date()
+    private var debtsArr = [Debts]()
+    private var unpaidDebtsArr = [Debts]()
+    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadItem()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +49,28 @@ class HomeViewController: UIViewController {
         return todayDate
     }
     
+    private func loadItem() {
+        let request: NSFetchRequest<Debts> = Debts.fetchRequest()
+        do {
+            debtsArr = try context.fetch(request)
+            
+            let unpaidDebtsPredicate = NSPredicate(format: "paid == %@", NSNumber(value: false))
+            request.predicate = unpaidDebtsPredicate
+            
+            unpaidDebtsArr = try context.fetch(request)
+            
+            // debug
+            for debt in debtsArr {
+                print("\(String(describing: debt.name))")
+            }
+            
+            totalDebtsLabel.text = String(debtsArr.count)
+            unpaidDebtsLabel.text = String(unpaidDebtsArr.count)
+            
+        } catch {
+            print("Fetching data failed")
+        }
+    }
 
     @IBAction func settingButtonPressed(_ sender: Any) {
     }
