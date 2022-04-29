@@ -6,10 +6,17 @@
 //
 
 import UIKit
+import CoreData
 
 class DebtsHomeViewController: UIViewController {
 
     @IBOutlet var plusButton: UIButton!
+    private var debtsArr = [Debts]()
+    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
+    override func viewWillAppear(_ animated: Bool) {
+        loadItem()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +29,21 @@ class DebtsHomeViewController: UIViewController {
      */
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    private func loadItem() {
+        let request: NSFetchRequest<Debts> = Debts.fetchRequest()
+        do {
+            debtsArr = try context.fetch(request)
+            
+            // debug
+            for debt in debtsArr {
+                print("\(String(describing: debt.name))")
+            }
+            
+        } catch {
+            print("Fetching data failed")
+        }
     }
     
     /*
