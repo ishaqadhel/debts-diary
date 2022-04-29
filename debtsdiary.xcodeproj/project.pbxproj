@@ -18,6 +18,8 @@
 		6ACD8AA7281AF86A00679B7D /* DebtTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACD8AA6281AF86A00679B7D /* DebtTableViewCell.swift */; };
 		6ACD8AA9281B0BAF00679B7D /* DebtDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACD8AA8281B0BAF00679B7D /* DebtDetailViewController.swift */; };
 		6ACD8AB2281B9CF900679B7D /* Debts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACD8AB1281B9CF900679B7D /* Debts.swift */; };
+		6ACD8AB4281BBDD300679B7D /* DebtBoxTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ACD8AB3281BBDD300679B7D /* DebtBoxTableViewCell.xib */; };
+		6ACD8AB6281BBFCB00679B7D /* DebtBoxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACD8AB5281BBFCB00679B7D /* DebtBoxTableViewCell.swift */; };
 		6AE72C2A281A70BB008D1BCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE72C29281A70BB008D1BCE /* AppDelegate.swift */; };
 		6AE72C2C281A70BB008D1BCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE72C2B281A70BB008D1BCE /* SceneDelegate.swift */; };
 		6AE72C2E281A70BB008D1BCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE72C2D281A70BB008D1BCE /* ViewController.swift */; };
@@ -39,6 +41,8 @@
 		6ACD8AA6281AF86A00679B7D /* DebtTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtTableViewCell.swift; sourceTree = "<group>"; };
 		6ACD8AA8281B0BAF00679B7D /* DebtDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtDetailViewController.swift; sourceTree = "<group>"; };
 		6ACD8AB1281B9CF900679B7D /* Debts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debts.swift; sourceTree = "<group>"; };
+		6ACD8AB3281BBDD300679B7D /* DebtBoxTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DebtBoxTableViewCell.xib; sourceTree = "<group>"; };
+		6ACD8AB5281BBFCB00679B7D /* DebtBoxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtBoxTableViewCell.swift; sourceTree = "<group>"; };
 		6AE72C26281A70BB008D1BCE /* debtsdiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = debtsdiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AE72C29281A70BB008D1BCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AE72C2B281A70BB008D1BCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +71,7 @@
 				6ACD8A9A281AC68A00679B7D /* List.storyboard */,
 				6ACD8A97281AC64200679B7D /* Home.storyboard */,
 				6AE72C2F281A70BB008D1BCE /* Main.storyboard */,
+				6ACD8AB3281BBDD300679B7D /* DebtBoxTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -98,6 +103,7 @@
 			children = (
 				6ACD8A9F281AC92F00679B7D /* DebtsHomeViewController.swift */,
 				6ACD8AA6281AF86A00679B7D /* DebtTableViewCell.swift */,
+				6ACD8AB5281BBFCB00679B7D /* DebtBoxTableViewCell.swift */,
 			);
 			path = DebtsHome;
 			sourceTree = "<group>";
@@ -203,6 +209,7 @@
 			files = (
 				6AE72C39281A70BE008D1BCE /* LaunchScreen.storyboard in Resources */,
 				6AE72C36281A70BE008D1BCE /* Assets.xcassets in Resources */,
+				6ACD8AB4281BBDD300679B7D /* DebtBoxTableViewCell.xib in Resources */,
 				6ACD8A9C281AC68A00679B7D /* List.storyboard in Resources */,
 				6AE72C31281A70BB008D1BCE /* Main.storyboard in Resources */,
 				6ACD8A99281AC64200679B7D /* Home.storyboard in Resources */,
@@ -226,6 +233,7 @@
 				6ACD8AA2281ADDBB00679B7D /* SettingViewController.swift in Sources */,
 				6ACD8AA0281AC92F00679B7D /* DebtsHomeViewController.swift in Sources */,
 				6ACD8A96281AA6CA00679B7D /* FirstSetupViewController.swift in Sources */,
+				6ACD8AB6281BBFCB00679B7D /* DebtBoxTableViewCell.swift in Sources */,
 				6AE72C34281A70BB008D1BCE /* debtsdiary.xcdatamodeld in Sources */,
 				6ACD8AA9281B0BAF00679B7D /* DebtDetailViewController.swift in Sources */,
 				6AE72C2C281A70BB008D1BCE /* SceneDelegate.swift in Sources */,

@@ -1,27 +1,26 @@
 //
-//  DebtTableViewCell.swift
+//  DebtBoxTableViewCell.swift
 //  debtsdiary
 //
-//  Created by Ishaq Adheltyo on 28/04/22.
+//  Created by Ishaq Adheltyo on 29/04/22.
 //
 
 import UIKit
 
-class DebtTableViewCell: UITableViewCell {
+class DebtBoxTableViewCell: UITableViewCell {
 
-    @IBOutlet var boxView: UIView!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var descLabel: UILabel!
     @IBOutlet var amountLabel: UILabel!
-    @IBOutlet var logoButton: UIButton!
     @IBOutlet var dateLabel: UILabel!
+    
+    override func layoutSubviews() {
+        self.contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0))
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        logoButton.setRounded()
-        boxView.setRounded()
-        self.layer.masksToBounds = false
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
