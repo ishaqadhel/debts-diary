@@ -141,6 +141,7 @@
                     <connections>
                         <outlet property="debtsTableView" destination="xa6-M4-Og5" id="UR0-Fi-gr0"/>
                         <outlet property="plusButton" destination="2rP-dN-b2b" id="Jc4-78-qpD"/>
+                        <segue destination="h39-qP-FhA" kind="show" identifier="editDebt" id="zog-4L-Hnq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lz4-0J-07F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -309,6 +310,9 @@
             <point key="canvasLocation" x="4093.8461538461538" y="568.72037914691941"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="l9n-du-4R6"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="checkmark" catalog="system" width="128" height="114"/>

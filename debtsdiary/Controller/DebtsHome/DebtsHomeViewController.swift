@@ -12,7 +12,7 @@ class DebtsHomeViewController: UIViewController {
 
     @IBOutlet var plusButton: UIButton!
     @IBOutlet var debtsTableView: UITableView!
-    private var debtsArr = [Debts]()
+    var debtsArr = [Debts]()
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private let userDefaults = UserDefaults.standard
 
@@ -89,6 +89,27 @@ extension DebtsHomeViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         } else {
             return UITableViewCell()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        self.performSegue(withIdentifier: "editDebt", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if(segue.identifier == "editDebt")
+        {
+            let indexPath = debtsTableView.indexPathForSelectedRow!
+            
+            let debtDetail = segue.destination as? DebtDetailViewController
+            
+            let selectedDebt : Debts!
+            selectedDebt = debtsArr[indexPath.row]
+            debtDetail!.debtsStruct = selectedDebt
+            
+            debtsTableView.deselectRow(at: indexPath, animated: true)
         }
     }
 }

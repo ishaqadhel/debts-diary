@@ -18,8 +18,8 @@ class DebtDetailViewController: UIViewController {
     @IBOutlet var paidStatusSlider: UISlider!
     @IBOutlet var submitButton: UIButton!
     
-    var debtsStruct : DebtsStruct = DebtsStruct()
-    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var debtsStruct : Debts? = nil
+    
     private let date = Date()
     private var paidStatus = false
     
@@ -27,6 +27,22 @@ class DebtDetailViewController: UIViewController {
         super.viewDidLoad()
 
         submitButton.setRounded()
+        
+        if(debtsStruct != nil)
+        {
+            peopleNameTextField.text = debtsStruct?.name
+            descriptionTextField.text = debtsStruct?.desc
+            amountTextField.text = String(debtsStruct!.amount)
+            
+            if(debtsStruct!.paid == true)
+            {
+                paidStatusSlider.value = 1.0
+            }
+            else
+            {
+                paidStatusSlider.value = 0.0
+            }
+        }
     }
     
     /**
@@ -45,16 +61,53 @@ class DebtDetailViewController: UIViewController {
     }
     
     @IBAction func submitButtonPressed(_ sender: Any) {
-        if peopleNameTextField.hasText && descriptionTextField.hasText && amountTextField.hasText {
-            debtsStruct.name = peopleNameTextField.text!
-            debtsStruct.desc = descriptionTextField.text!
-            debtsStruct.amount = Double(amountTextField.text!)!
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        
+        if(debtsStruct == nil)
+        {
+            let entity = NSEntityDescription.entity(forEntityName: "Debts", in: context)
+            let newDebt = Debts(entity: entity!, insertInto: context)
+            newDebt.name = peopleNameTextField.text
+            newDebt.desc = descriptionTextField.text
+            newDebt.amount = Double(amountTextField.text!)!
+            newDebt.createdAt = date
             
-            let entity = NSEntityDescription.entity(forEntityName: "Debts", in: self.context)
-            let newEntry = NSManagedObject(entity: entity!, insertInto: self.context)
-            
-            self.saveData(entryDBObj: newEntry)
-            self.navigationController!.popToRootViewController(animated: true)
+            do
+            {
+                try context.save()
+                navigationController?.popViewController(animated: true)
+            }
+            catch
+            {
+                print("context save error")
+            }
+        }
+        else
+        {
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Debts")
+            do {
+                let results:NSArray = try context.fetch(request) as NSArray
+                for result in results
+                {
+                    let debt = result as! Debts
+                    
+                    if(debt == debtsStruct)
+                    {
+                        debt.name = peopleNameTextField.text!
+                        debt.desc = descriptionTextField.text!
+                        debt.amount = Double(amountTextField.text!)!
+                        debt.paid = paidStatus
+                        try context.save()
+                        navigationController?.popViewController(animated: true)
+                    }
+                }
+            }
+            catch
+            {
+                print("Fetch Failed")
+            }
         }
     }
     
@@ -72,27 +125,11 @@ class DebtDetailViewController: UIViewController {
             if sender.value == 1.0
             {
                 paidStatus = true
-                debtsStruct.paid = paidStatus
             }
             else
             {
-                debtsStruct.paid = paidStatus
+                paidStatus = false
             }
-        }
-
-    }
-    
-    private func saveData(entryDBObj:NSManagedObject){
-        entryDBObj.setValue(self.debtsStruct.name, forKey: "name")
-        entryDBObj.setValue(self.debtsStruct.desc, forKey: "desc")
-        entryDBObj.setValue(self.debtsStruct.amount, forKey: "amount")
-        entryDBObj.setValue(self.debtsStruct.paid, forKey: "paid")
-        entryDBObj.setValue(self.date, forKey: "createdAt")
-
-        do {
-            try context.save()
-        } catch {
-            print("Storing data Failed")
         }
 
     }
