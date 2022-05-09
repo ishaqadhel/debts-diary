@@ -18,6 +18,8 @@ class DebtDetailViewController: UIViewController {
     @IBOutlet var paidStatusSlider: UISlider!
     @IBOutlet var submitButton: UIButton!
     
+    @IBOutlet var deleteButton: UIButton!
+    
     var debtsStruct : Debts? = nil
     
     private let date = Date()
@@ -27,9 +29,11 @@ class DebtDetailViewController: UIViewController {
         super.viewDidLoad()
 
         submitButton.setRounded()
-        
+        deleteButton.isHidden = true
         if(debtsStruct != nil)
         {
+            screenTitle.text = "Edit Debt"
+            deleteButton.isHidden = false
             peopleNameTextField.text = debtsStruct?.name
             descriptionTextField.text = debtsStruct?.desc
             amountTextField.text = String(debtsStruct!.amount)
@@ -132,5 +136,27 @@ class DebtDetailViewController: UIViewController {
             }
         }
 
+    }
+    @IBAction func deleteButtonPressed(_ sender: Any) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Debts")
+        do {
+            let results:NSArray = try context.fetch(request) as NSArray
+            for result in results
+            {
+                let debt = result as! Debts
+                if(debt == debtsStruct)
+                {
+                    context.delete(debt)
+                    navigationController?.popViewController(animated: true)
+                }
+            }
+        }
+        catch
+        {
+            print("Fetch Failed")
+        }
     }
 }
